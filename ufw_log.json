@@ -30,7 +30,7 @@
       "source_field": "message",
       "target_field": "",
       "extractor_config": {
-        "grok_pattern": "\\[%{DATA}\\] \\[UFW %{WORD:ufw_action}\\] IN=%{DATA:ufw_interface} OUT= MAC=%{DATA:ufw_mac} SRC=%{IP:ufw_src_ip} DST=%{IP:ufw_dest_ip} LEN=%{INT:ufw_pack_len} TOS=%{DATA:ufw_tos_data} PREC=%{DATA:ufw_prec_data} TTL=%{INT:ufw_ttl_data} ID=%{DATA:ufw_id_data} PROTO=%{WORD:ufw_protocol}(%WINDOW=%{DATA:ufw_window_data})?(%RES=%{DATA:ufw_res_data})?(%{WORD:ufw_packetsynack})?(%URGP=%{DATA:ufw_urgp_data})?"
+        "grok_pattern": "\\[%{DATA}\\] \\[UFW %{WORD:ufw_action}\\] IN=%{DATA:ufw_interface} OUT= MAC=%{DATA:ufw_mac} SRC=%{IP:ufw_src_ip} DST=%{IP:ufw_dest_ip} LEN=%{INT:ufw_pack_len} TOS=%{DATA:ufw_tos_data} PREC=%{DATA:ufw_prec_data} TTL=%{INT:ufw_ttl_data} ID=%{DATA:ufw_id_data} PROTO=%{WORD:ufw_protocol}(%WINDOW=%{DATA:ufw_window_data})?(%RES=%{DATA:ufw_res_data})?(%{WORD:ufw_packetsynack})?(%URGP=%{DATA:ufw_urgp_data})? SPT=%{INT:ufw_src_port} DPT=%{INT:ufw_dest_port}"
       },
       "condition_type": "string",
       "condition_value": "UFW"
